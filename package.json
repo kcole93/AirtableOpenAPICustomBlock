@@ -1,6 +1,7 @@
 {
     "dependencies": {
         "@airtable/blocks": "0.0.52",
+        "@airtable/blocks-webpack-bundler": "0.0.2",
         "isarray": "^2.0.5",
         "react": "^16.13.0",
         "react-dom": "^16.13.0",
@@ -8,6 +9,7 @@
         "swagger-ui-react": "^3.28.0"
     },
     "devDependencies": {
+        "@airtable/blocks-cli": "^2.0.4",
         "eslint": "^6.8.0",
         "eslint-plugin-react": "^7.18.3",
         "eslint-plugin-react-hooks": "^2.5.0"
