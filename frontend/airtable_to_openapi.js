@@ -219,6 +219,7 @@ const AIRTABLE_TO_OPENAPI_DEFS = {
 function getTableTemplate(table) {
   var table_structure = {
     get: {
+      operationId: `Get${table.name}`,
       tags: [table.name],
       summary: 'Get records',
       parameters: [{
@@ -322,6 +323,7 @@ function getTableTemplate(table) {
       }
     },
     post: {
+      operationId: `Post${table.name}`,
       tags: [table.name],
       summary: 'Create new record(s)',
       requestBody: {},
@@ -330,6 +332,7 @@ function getTableTemplate(table) {
       }
     },
     patch: {
+      operationId: `Patch${table.name}`,
       tags: [table.name],
       summary: 'Partially update existing record(s). Missing fields in request are not modified',
       requestBody: {},
@@ -338,6 +341,7 @@ function getTableTemplate(table) {
       }
     },
     put: {
+      operationId: `Put${table.name}`,
       tags: [table.name],
       summary: 'Update existing record(s). Missing fields in the request are updated to null/empty.',
       requestBody: {},
@@ -346,6 +350,7 @@ function getTableTemplate(table) {
       }
     },
     delete: {
+      operationId: `Delete${table.name}`,
       tags: [table.name],
       summary: 'Delete record(s)',
       parameters: [{
@@ -406,6 +411,7 @@ function getTableTemplate(table) {
 function getSingleRecordTableTemplate(table) {
   return {
     get: {
+      operationId: `Get${table.name}Record`,
       tags: [table.name],
       summary: 'Get record',
       parameters: [{
@@ -421,6 +427,7 @@ function getSingleRecordTableTemplate(table) {
       }
     },
     patch: {
+      operationId: `Patch${table.name}Record`,
       tags: [table.name],
       summary: 'Partially update existing record(s). Missing fields in request are not modified',
       parameters: [{
@@ -437,6 +444,7 @@ function getSingleRecordTableTemplate(table) {
       }
     },
     put: {
+      operationId: `Put${table.name}Record`,
       tags: [table.name],
       summary: 'Update existing record. Missing fields in the request are updated to null/empty.',
       parameters: [{
@@ -453,6 +461,7 @@ function getSingleRecordTableTemplate(table) {
       }
     },
     delete: {
+      operationId: `Delete${table.name}Record`,
       tags: [table.name],
       summary: 'Delete record',
       parameters: [{
